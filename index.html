@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Administración de estudiantes</title>
+
+    <!-- Hoja de estilos externa -->
+    <link rel="stylesheet" href="css/estilos.css">
+
+    <!-- Archivo JavaScript externo -->
+    <script src="js/estudiantes.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Administración de estudiantes</h1>
+        <p>Registro y consulta de información estudiantil</p>
+    </header>
+
+    <main>
+
+        <!-- FORMULARIO DE REGISTRO -->
+        <section id="registro">
+
+            <h2>Registrar estudiante</h2>
+
+            <form id="formEstudiante">
+
+                <div class="campo">
+                    <label for="matricula">Matrícula:</label>
+                    <input
+                        type="text"
+                        id="matricula"
+                        name="matricula"
+                        placeholder="Ej. 20260001"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="apellidos">Apellidos:</label>
+                    <input
+                        type="text"
+                        id="apellidos"
+                        name="apellidos"
+                        placeholder="Apellidos del estudiante"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="nombres">Nombres:</label>
+                    <input
+                        type="text"
+                        id="nombres"
+                        name="nombres"
+                        placeholder="Nombres del estudiante"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="fechaNacimiento">
+                        Fecha de nacimiento:
+                    </label>
+
+                    <input
+                        type="date"
+                        id="fechaNacimiento"
+                        name="fechaNacimiento"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="carrera">Carrera:</label>
+
+                    <select id="carrera" name="carrera" required>
+
+                        <option value="">
+                            Seleccionar carrera
+                        </option>
+
+                        <option value="Computación">
+                            Computación
+                        </option>
+
+                        <option value="Matemáticas">
+                            Matemáticas
+                        </option>
+
+                        <option value="Álgebra">
+                            Álgebra
+                        </option>
+
+                    </select>
+                </div>
+
+                <div class="acciones">
+                    <button type="submit" id="btnAgregar">
+                        Agregar estudiante
+                    </button>
+
+                    <button type="reset" id="btnLimpiar">
+                        Limpiar
+                    </button>
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- TABLA DE ESTUDIANTES -->
+        <section id="listado">
+
+            <h2>Lista de estudiantes</h2>
+
+            <div class="tabla-contenedor">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Matrícula</th>
+                            <th>Apellidos</th>
+                            <th>Nombres</th>
+                            <th>Fecha de nacimiento</th>
+                            <th>Carrera</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tablaEstudiantes">
+
+                        <!-- Los registros se generarán con JavaScript -->
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- TARJETAS DE ESTUDIANTES -->
+        <section id="tarjetas">
+
+            <h2>Estudiantes registrados</h2>
+
+            <div id="contenedorTarjetas" class="grid-estudiantes">
+
+                <!-- Las tarjetas se generarán con JavaScript -->
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Práctica de desarrollo web con HTML, CSS y JavaScript</p>
+    </footer>
+
+</body>
+
+</html>

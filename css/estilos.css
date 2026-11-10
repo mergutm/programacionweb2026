@@ -1,0 +1,477 @@
+
+/* =========================================
+   1. VARIABLES DEL TEMA CLARO
+========================================= */
+
+:root {
+
+    color-scheme: light;
+
+    --color-fondo: #f3f4f6;
+    --color-superficie: #ffffff;
+    --color-texto: #1f2937;
+    --color-texto-secundario: #6b7280;
+
+    --color-borde: #d1d5db;
+
+    --color-primario: #2563eb;
+    --color-primario-hover: #1d4ed8;
+
+    --color-peligro: #dc2626;
+    --color-peligro-hover: #b91c1c;
+
+    --color-encabezado-tabla: #e5e7eb;
+
+    --sombra: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    --radio: 8px;
+}
+
+
+/* =========================================
+   2. VARIABLES DEL TEMA OSCURO
+========================================= */
+
+@media (prefers-color-scheme: dark) {
+
+    :root {
+
+        color-scheme: dark;
+
+        --color-fondo: #111827;
+        --color-superficie: #1f2937;
+        --color-texto: #f9fafb;
+        --color-texto-secundario: #9ca3af;
+
+        --color-borde: #374151;
+
+        --color-primario: #3b82f6;
+        --color-primario-hover: #2563eb;
+
+        --color-peligro: #ef4444;
+        --color-peligro-hover: #dc2626;
+
+        --color-encabezado-tabla: #374151;
+
+        --sombra: 0 2px 8px rgba(0, 0, 0, 0.35);
+    }
+
+}
+
+
+/* =========================================
+   3. CONFIGURACIÓN GENERAL
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+
+    margin: 0;
+    padding: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+
+    line-height: 1.5;
+
+}
+
+header {
+
+    background-color: var(--color-superficie);
+
+    padding: 25px 15px;
+
+    text-align: center;
+
+    border-bottom: 1px solid var(--color-borde);
+
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+header p {
+    color: var(--color-texto-secundario);
+    margin-bottom: 0;
+}
+
+main {
+
+    width: 95%;
+    max-width: 1200px;
+
+    margin: 25px auto;
+
+}
+
+section {
+
+    background-color: var(--color-superficie);
+
+    padding: 20px;
+
+    margin-bottom: 25px;
+
+    border: 1px solid var(--color-borde);
+
+    border-radius: var(--radio);
+
+    box-shadow: var(--sombra);
+
+}
+
+h2 {
+
+    margin-top: 0;
+    margin-bottom: 20px;
+
+    font-size: 21px;
+
+}
+
+
+/* =========================================
+   4. FORMULARIO
+========================================= */
+
+#formEstudiante {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+
+}
+
+.campo {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+}
+
+.campo label {
+
+    font-weight: bold;
+
+    font-size: 14px;
+
+}
+
+.campo input,
+.campo select {
+
+    width: 100%;
+
+    padding: 11px;
+
+    border: 1px solid var(--color-borde);
+
+    border-radius: 5px;
+
+    background-color: var(--color-fondo);
+
+    color: var(--color-texto);
+
+    font-size: 15px;
+
+}
+
+.campo input:focus,
+.campo select:focus {
+
+    outline: 2px solid var(--color-primario);
+
+    outline-offset: 1px;
+
+}
+
+
+/* =========================================
+   5. BOTONES
+========================================= */
+
+.acciones {
+
+    grid-column: 1 / -1;
+
+    display: flex;
+
+    gap: 10px;
+
+    justify-content: flex-end;
+
+}
+
+button {
+
+    border: none;
+
+    border-radius: 5px;
+
+    padding: 10px 16px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    transition: background-color 0.2s;
+
+}
+
+#btnAgregar {
+
+    background-color: var(--color-primario);
+
+    color: white;
+
+}
+
+#btnAgregar:hover {
+
+    background-color: var(--color-primario-hover);
+
+}
+
+#btnLimpiar {
+
+    background-color: var(--color-encabezado-tabla);
+
+    color: var(--color-texto);
+
+}
+
+#btnLimpiar:hover {
+
+    filter: brightness(0.9);
+
+}
+
+
+/* =========================================
+   6. TABLA
+========================================= */
+
+.tabla-contenedor {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+}
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 650px;
+
+}
+
+th,
+td {
+
+    padding: 12px;
+
+    border-bottom: 1px solid var(--color-borde);
+
+    text-align: left;
+
+}
+
+th {
+
+    background-color: var(--color-encabezado-tabla);
+
+    font-size: 14px;
+
+}
+
+td {
+
+    font-size: 14px;
+
+}
+
+tbody tr:hover {
+
+    background-color: var(--color-fondo);
+
+}
+
+
+/* =========================================
+   7. BOTÓN ELIMINAR
+========================================= */
+
+.btn-eliminar {
+
+    background-color: var(--color-peligro);
+
+    color: white;
+
+    padding: 7px 12px;
+
+}
+
+.btn-eliminar:hover {
+
+    background-color: var(--color-peligro-hover);
+
+}
+
+
+/* =========================================
+   8. GRID DE TARJETAS
+========================================= */
+
+.grid-estudiantes {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+
+}
+
+.tarjeta {
+
+    background-color: var(--color-fondo);
+
+    border: 1px solid var(--color-borde);
+
+    border-radius: var(--radio);
+
+    padding: 18px;
+
+    box-shadow: var(--sombra);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+.tarjeta h3 {
+
+    margin: 0;
+
+    font-size: 18px;
+
+}
+
+.tarjeta p {
+
+    margin: 0;
+
+    font-size: 14px;
+
+    color: var(--color-texto-secundario);
+
+}
+
+.tarjeta .btn-eliminar {
+
+    margin-top: 10px;
+
+    align-self: flex-end;
+
+}
+
+
+/* =========================================
+   9. PIE DE PÁGINA
+========================================= */
+
+footer {
+
+    text-align: center;
+
+    padding: 20px;
+
+    color: var(--color-texto-secundario);
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================
+   10. DISEÑO RESPONSIVO
+========================================= */
+
+/* Pantallas medianas */
+
+@media (max-width: 900px) {
+
+    .grid-estudiantes {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+
+/* Pantallas pequeñas */
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    main {
+        width: 100%;
+        padding: 10px;
+        margin: 10px auto;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    #formEstudiante {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .grid-estudiantes {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .acciones {
+
+        flex-direction: column;
+
+    }
+
+    .acciones button {
+
+        width: 100%;
+
+    }
+
+}
